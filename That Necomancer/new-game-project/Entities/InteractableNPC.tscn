@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://huogyktu5srw"]
+
+[ext_resource type="Script" uid="uid://dhlr3x6sq8twy" path="res://Scripts/DialogueInteractions.cs" id="1_7yohp"]
+[ext_resource type="Texture2D" uid="uid://b5f421xddte7r" path="res://Graphics/Sprites/NPC/TestSkelebro.png" id="1_h7qck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yohp"]
+size = Vector2(92, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ywxr"]
+size = Vector2(91, 36)
+
+[node name="InteractableNPC" type="Node2D"]
+script = ExtResource("1_7yohp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h7qck")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="InteractArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_7yohp")
+debug_color = Color(0.866295, 0.00056159, 0.859728, 0.42)
+
+[node name="CollisionArea" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea"]
+position = Vector2(0.5, 36)
+shape = SubResource("RectangleShape2D_5ywxr")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="mouse_entered" from="InteractArea" to="." method="_on_interact_area_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="." method="_on_interact_area_mouse_exited"]

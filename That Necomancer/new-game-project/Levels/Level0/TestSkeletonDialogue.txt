@@ -1,0 +1,23 @@
+0,"Well howdy there feller. You got a bone to pick with us?":"NYEYEYEYE"
+1,"What's my favorite snack?":"PRIME RIB"
+2,"You should kill yourself NOW!":"Your life serves no purpose":"Other than being on my stream sucking on my dick daily"
+
+
+0,0,"Well howdy there feller. You got a bone to pick with us?":1,"NYEYEYEYE"
+1,0,"What's my favorite snack?",1,"PRIME RIB"
+
+Skeleton 2: "What's my favorite snack?"
+
+10,"Test Dialogue"
+
+
+
+You:
+	"Uh"
+	"What"
+	"I don-"
+
+Skeleton 1: 
+	"NYEYEYEYE"
+Skeleton 2: 
+	"PRIME RIB" 

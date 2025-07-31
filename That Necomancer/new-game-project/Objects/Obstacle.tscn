@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ownilvuhiin"]
+
+[ext_resource type="Script" uid="uid://dhlr3x6sq8twy" path="res://Scripts/DialogueInteractions.cs" id="1_pagcx"]
+[ext_resource type="Texture2D" uid="uid://dgtyf14qehmyh" path="res://Graphics/Sprites/Objects/mausoleum_0003_mausoleum.png" id="2_pagcx"]
+
+[node name="Obstacle" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_pagcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, -82)
+texture = ExtResource("2_pagcx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(396, 67, 20, 348, -78, 336, -288, 209, -429, 65, -152, -99)

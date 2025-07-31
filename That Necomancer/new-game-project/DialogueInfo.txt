@@ -1,0 +1,4 @@
+ref:(charID),(dialogue#),(dialogue text)
+	(charID),(dialogue#),(dialogue text),(dialogue#),(dialogue text):(charID),(dialogue#),(dialogue text),(dialogue#),(dialogue text)
+
+ CharID tied to line number

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://drns1ymhtlpcn"]
+
+[ext_resource type="Script" uid="uid://vyqf6thho672" path="res://Scripts/Player.cs" id="1_tccr0"]
+[ext_resource type="Texture2D" uid="uid://dh7n163fyovip" path="res://Graphics/Sprites/Players/PlayerTestSprite.png" id="2_tccr0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex5ah"]
+size = Vector2(56, 27)
+
+[node name="PlayerBase" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_tccr0")
+speed = 200.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+debug_enabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -57)
+texture = ExtResource("2_tccr0")
+
+[node name="FootCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_ex5ah")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -57)

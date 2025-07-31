@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://p410v0je7r1t"]
+
+[ext_resource type="PackedScene" uid="uid://drns1ymhtlpcn" path="res://Entities/Players/player_base.tscn" id="1_ormqy"]
+[ext_resource type="PackedScene" uid="uid://d3ownilvuhiin" path="res://Objects/Obstacle.tscn" id="3_4k50d"]
+[ext_resource type="PackedScene" uid="uid://huogyktu5srw" path="res://Entities/InteractableNPC.tscn" id="4_i4ak4"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4k50d"]
+vertices = PackedVector2Array(1525.32, -958.391, 1534.88, 203.094, 1537.66, 542.047, 678.531, 115.43, 670.352, 67.2031, -389.906, -977.602, 61, -124.711, 42.3438, -102.141, -260.969, 87.1484, -422.141, 544.93, -79.5313, 276.25, 258, 429.18)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4, 6), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 5, 8), PackedInt32Array(9, 8, 10), PackedInt32Array(11, 3, 2), PackedInt32Array(11, 2, 9), PackedInt32Array(9, 10, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-463, 585, 1578, 582, 1574.88, 202.755, 1565, -998, -429, -1018, 73, -79, 635, 98, 253, 383, -56, 243, -198, 95, 76, -76, -429, -1021)])
+agent_radius = 40.0
+
+[node name="TestLevel" type="Node2D"]
+y_sort_enabled = true
+
+[node name="PlayerBase" parent="." instance=ExtResource("1_ormqy")]
+position = Vector2(589, -433)
+
+[node name="Obstacle" parent="." instance=ExtResource("3_4k50d")]
+position = Vector2(221, 48)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(403, -220)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-14, 20)
+navigation_polygon = SubResource("NavigationPolygon_4k50d")
+
+[node name="Skeleton1" parent="." instance=ExtResource("4_i4ak4")]
+position = Vector2(874, 73)
+
+[node name="Skeleton2" parent="." instance=ExtResource("4_i4ak4")]
+position = Vector2(1079, 104)
+npcId = 1
+
+[node name="Skeleton3" parent="." instance=ExtResource("4_i4ak4")]
+position = Vector2(1133, -133)
+npcId = 2
